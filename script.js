@@ -12,8 +12,24 @@ function startQuiz() {
 }
 
 
+// window.onload = function () {
+ 
+// }
+
+function hideButton() {
+  var x = document.getElementById("mad");
+  //mad is the button var and shall remain as such. vanish on start and shows the other functions 
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
+
 window.onload = function () {
   document.getElementById('questions').style.display = 'none';
+  document.getElementById('mad').style.display = 'block';
 }
 
 function showQuestions() {
@@ -29,12 +45,37 @@ function startFunction() {
   message.innerHTML = question1 ;
 }
 
+//Quesrion one
 var question1 = 'Where is the console? <button>A<?button><button onClick="clickMe()" > here </button>'
 //this is the path from one question to the next. if i can get the buttons put in then I can get it sorted
 
+// Question two
 function clickMe() {
-  message.innerHTML = 'this'
+  // add point to user score
+  message.innerHTML = ['this', '<button onClick="clickMe2()">A<?button>']
 }
+
+//Question three
+function clickMe2() {
+  // add point to user score
+  message.innerHTML = ['hellooooo', '<button onClick="clickMe3()">A<?button>']
+}
+
+//Question four
+function clickMe3() {
+  // add point to user score
+  message.innerHTML = ['this', '<button onClick="clickMe4()"> A <?button> ']
+}
+
+//Question five
+function clickMe4() {
+  // add point to user score
+  message.innerHTML = ['this', '<button onClick="results()"> A <?button>']
+}
+
+function results() {
+  message.innerHTML = 'user results'
+};
 //this shows 'this' when the here button has been pressed
 
 
