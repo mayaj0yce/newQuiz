@@ -5,7 +5,7 @@ let message = document.querySelector("#questions");
 var oneDiv = document.getElementById('questionOne');
 var userPoints = 60;
 
-var startButton = document.querySelector(".start-button");
+var startButton = document.querySelector(".start-");
 
 function startQuiz() {
     showQuestions()
@@ -14,7 +14,7 @@ function startQuiz() {
 
 function hideButton() {
   var x = document.getElementById("mad");
-  //mad is the button var and shall remain as such. vanish on start and shows the other functions 
+  //mad is the  var and shall remain as such. vanish on start and shows the other functions 
   if (x.style.display === "block") {
     x.style.display = "none";
   } else {
@@ -22,14 +22,14 @@ function hideButton() {
   }
 };
 
-//hides the questions and shows the start button
+//hides the questions and shows the start 
 window.onload = function () {
   document.getElementById('questions').style.display = 'none';
   document.getElementById('mad').style.display = 'block';
   document.getElementById('results').style.display = 'none';
 }
 
-//on click the start button will be hidden and the questions will show
+//on click the start  will be hidden and the questions will show
 function showQuestions() {
    var x = document.getElementById("questions");
    if (x.style.display === "none") {
@@ -44,7 +44,7 @@ function startFunction() {
 }
 
 //Quesrion one
-var question1 = 'Where is the console? <button onClick="wrongGuess()">A:vscode<?button><button onClick="wrongGuess()">B: the server <?button><button onClick="clickMe()">C: under "inspect" </button><button onClick="wrongGuess()">D: in the terminal<?button>'
+var question1 = 'Where is the console? ="()">A:vscode the server: under "inspect" </>< onClick="wrongGuess()">D: in the terminal<?>'
 
 function wrongGuess() {
   console.log('oopsie -5 ')
@@ -56,25 +56,25 @@ function wrongGuess() {
 // Question two
 function clickMe() {
   // add point to user score
-  message.innerHTML = ['A page can be styled through all of the following EXCEPT: <button onClick="wrongGuess()">A:html<?button><button onClick="wrongGuess()">B: CSS<?button><button onClick="wrongGuess()">C: javascript </button><button onClick="clickMe2()">D: .env <?button>']
+  message.innerHTML = ['A page can be styled through all of the following EXCEPT: < onClick="wrongGuess()">A:html<?>< onClick="wrongGuess()">B: CSS<?>< onClick="wrongGuess()">C: javascript </>< onClick="clickMe2()">D: .env <?>']
 }
 
 //Question three
 function clickMe2() {
   // add point to user score
-  message.innerHTML = [' Pick the right format for an "if else statement" <button onClick="clickMe3()"> A: if () {} else {} <?button><button onClick="wrongGuess()"> B: if {} else ()<?button><button onClick="wrongGuess()"> C: if.else.{} </button><button onClick="wrongGuess()"> D: <if>  </else> <?button>']
+  message.innerHTML = [' Pick the right format for an "if else statement" < onClick="clickMe3()"> A: if () {} else {} <?>< onClick="wrongGuess()"> B: if {} else ()<?>< onClick="wrongGuess()"> C: if.else.{} </>< onClick="wrongGuess()"> D: <if>  </else> <?>']
 }
 
 //Question four
 function clickMe3() {
   // add point to user score
-  message.innerHTML = [' Which of these represents the first object of an array: <button onClick="wrongGuess()">A: -1<?button><button onClick="clickMe4()">B: 0<?button><button onClick="wrongGuess()"> C: 1 <?button> <button onClick="wrongGuess()">D: 0.0 <?button?>']
+  message.innerHTML = [' Which of these represents the first object of an array: < onClick="wrongGuess()">A: -1<?>< onClick="clickMe4()">B: 0<?>< onClick="wrongGuess()"> C: 1 <?> < onClick="wrongGuess()">D: 0.0 <??>']
 }
 
 //Question five
 function clickMe4() {
   // add point to user score
-  message.innerHTML = ['By using async what can you make a function do: <button onClick="results()"> A: wait <?button> <button onClick="wrongGuess()"> B: stutter step <?button> <button onClick="wrongGuess()"> C: trigger <?button><button onClick="wrongGuess()"> D: coil <?button>']
+  message.innerHTML = ['By using async what can you make a function do: < onClick="results()"> A: wait <?> < onClick="wrongGuess()"> B: stutter step <?> < onClick="wrongGuess()"> C: trigger <?>< onClick="wrongGuess()"> D: coil <?>']
 }
 
 function results() {
@@ -105,7 +105,7 @@ function showResults() {
 // else sub 5 sec and alert 'wrong' 
 
 // question must be selected as correct to move onto the next question
-// format question field and use button choices as correct / not
+// format question field and use  choices as correct / not
 
 
 
