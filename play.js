@@ -1,5 +1,5 @@
 const question = document.getElementById('question');
-const choices = Array.from(document.getElementsByClassName('choiceText'))
+const choices = Array.from(document.getElementsByClassName('choiceText'));
 
 let currentQuestion = {};
 let acceptAnswers = false;
@@ -67,12 +67,25 @@ nextQuestion = () => {
     currentQuestion = questionList[questionIndex];
     question.innerText = currentQuestion.question;
 
-
-    choices.forEach( choice => {
-        const number = choice.dataset['number'];
-        choice.innerText = currentQuestion['choice' + number];
+    choices.forEach(choice => {
+        const number = choice.dataset["number"];
+        choice.innerText = currentQuestion["choice" + number];
     });
+
+    questionList.splice(questionIndex, 1);
+    acceptAnswers = true;
 };
+
+choices.forEach(choice => {
+    choice.addEventListener('click', e => {
+    if (!acceptAnswers) return;
+
+    acceptAnswers = false;
+    const selectedChoice = e.target;
+    const selectedAnswer = selectedChoice.dataset['number'];
+    nextQuestion();
+    });
+});
 
 startGame();
 

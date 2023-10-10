@@ -1,7 +1,7 @@
 .choiceContainer {
     display: flex;
     margin-bottom: 0.5rem;
-    width: 50%;
+    width: 100%;
     font-size: 1.8rem;
     border: 0.1rem solid rgb(244, 193, 229)
 }
@@ -19,4 +19,13 @@
 
 .choiceText {
     padding: 1.5rem; 
+    width: 100%;
+}
+
+.correct {
+    background-color: 28a745;
+}
+
+.wrong {
+    background-color: dc3545;
 }
