@@ -20,7 +20,7 @@ Once all questions have been answered the user will have the option to save thei
 
 Then the user can click play again and be brought back to the start
 
-![Screenshot 2023-10-11 002218](https://github.com/mayaj0yce/newQuiz/assets/129634010/0235e776-5548-4b81-8c94-6c617c2f8e39)
+![Screenshot 2023-10-11 002526](https://github.com/mayaj0yce/newQuiz/assets/129634010/4642701f-2900-4d93-81fc-a44fc90977cc)
 
 About Me:
 
