@@ -62,6 +62,9 @@ startGame = () => {
 };
 
 nextQuestion = () => {
+    if (questionList.length === 0 || questionCount >= maxQuestions) {
+        return window.location.assign('score.html')
+    }
     questionCount++;
     const questionIndex = Math.floor(Math.random() * questionList.length);
     currentQuestion = questionList[questionIndex];
@@ -77,16 +80,26 @@ nextQuestion = () => {
 };
 
 choices.forEach(choice => {
-    choice.addEventListener('click', e => {
-    if (!acceptAnswers) return;
+    choice.addEventListener("click", e => {
+        if (!acceptAnswers) return;
 
-    acceptAnswers = false;
-    const selectedChoice = e.target;
-    const selectedAnswer = selectedChoice.dataset['number'];
-    nextQuestion();
+        acceptAnswers = false;
+        const selectedChoice = e.target;
+        const selectedAnswer = selectedChoice.dataset["number"];
+
+        const classToApply =
+            selectedAnswer == currentQuestion.answer ? "correct" : "wrong";
+
+
+        selectedChoice.parentElement.classList.add(classToApply);
+
+        // selectedChoice.parentElement.classList.remove(classToApply);
+
+        setTimeout(() => {
+            selectedChoice.parentElement.classList.remove(classToApply);
+            nextQuestion();
+        }, 1000);
     });
 });
 
 startGame();
-
-console.log(choices)
