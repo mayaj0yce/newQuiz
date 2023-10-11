@@ -6,37 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScriptQuiz - ScorePage</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="play.css" />
+    <!-- <link rel="stylesheet" href="play.css" /> -->
 </head>
 
 <body>
     <div class="container">
-        <div id="end" class="flex-center flex-column">
-            <h1 id="finalScore"> 0</h1>
-            <form>
-                <input 
-                type="text" 
-                name="userInitials" 
-                id="userInitials"
-                placeholder="User Initials"
-                />
+        <div>
 
-                <button 
-                type="submit" 
-                id="saveScore" 
-                class="btn"
-                onClick="saveScore(event)"
-                >
-                    Save Score
-                </button>
+            <div id="end" class="flex-center flex-column">
+                <h1 id="finalScore"> </h1>
+                <form>
+                    <input type="text" name="userInitials" id="userInitials" placeholder="User Initials" />
 
-            </form>
-            <a class="btn" href="./index.html"> Play Again? </a>
+                    <button type="submit" id="saveScore" class="btn" onClick="saveHighScore(event)">
+                        Save Score
+                    </button>
+                </form>
+                <a class="btn" href="./index.html"> Play Again </a>
+            </div>
+
+            <div id="highScores" class="flex-center flex-column">
+                <h3 id="'finalScoreShow">High Scores</h3>
+                <ul id="highScoresList"> here </ul>
+            </div>
+            
         </div>
     </div>
-  
-
 </body>
-<script src="score.js"></script>
+<script src="./score.js"></script>
 
 </html>
