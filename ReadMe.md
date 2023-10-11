@@ -1,5 +1,7 @@
 # JavaScript Quiz
 
+[Live Link](https://mayaj0yce.github.io/newQuiz/)
+
 Upon load the user is presented with a quick introduction and a start button
 
 ![Screenshot 2023-10-11 002127](https://github.com/mayaj0yce/newQuiz/assets/129634010/a4c52c71-3e9f-4f25-85e2-dabfa42a5f60)
