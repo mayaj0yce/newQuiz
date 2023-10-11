@@ -1,11 +1,30 @@
 const question = document.getElementById('question');
 const choices = Array.from(document.getElementsByClassName('choiceText'));
 const scoreText = document.getElementById('score');
+const timeText = document.getElementById('timer');
 
 let currentQuestion = {};
 let acceptAnswers = false;
 let score = 0;
-let time = 120;
+let time = 60;
+
+function updateTimer() {
+    timeText.textContent = time;
+
+    if (time == 0) {
+        clearInterval(interval);
+        return window.location.assign('score.html');
+    }
+    else {
+        time--;
+    }
+}
+
+const interval = setInterval(updateTimer, 1000);
+
+scoreText.innerText = score;
+timeText.innerText = time;
+
 let questionList = [];
 
 let questions = [
@@ -51,19 +70,21 @@ let questions = [
     },
 ];
 
-
 const correctAnswer = 5;
 const maxQuestions = 5;
+const wrongAnswer = 5;
 
 startGame = () => {
     questionCount = 0;
     score = 0;
     questionList = [...questions];
+    time = 60;
     nextQuestion();
 };
 
 nextQuestion = () => {
     if (questionList.length === 0 || questionCount >= maxQuestions) {
+        localStorage.setItem('lastScore', score);
         return window.location.assign('score.html')
     }
     questionCount++;
@@ -90,12 +111,13 @@ choices.forEach(choice => {
 
         const classToApply = selectedAnswer == currentQuestion.answer ? "correct" : "wrong";
 
-        if(classToApply === 'correct') {
-           increaseScore(correctAnswer); 
+        if (classToApply === 'correct') {
+            increaseScore(correctAnswer);
         }
-        // if(classToApply === 'wrong') {
-        //     decrease time 
-        // }
+        if (classToApply === 'wrong') {
+            decreaseTime(wrongAnswer);
+        }
+     
 
         selectedChoice.parentElement.classList.add(classToApply);
 
@@ -108,8 +130,14 @@ choices.forEach(choice => {
 });
 
 increaseScore = num => {
-    score+= num;
+    score += num;
     scoreText.innerText = score;
+};
+
+function decreaseTime(num) {
+    time -= num;  // Use subtraction here
+    timeText.innerText = time;
 }
+
 
 startGame();

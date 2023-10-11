@@ -114,28 +114,28 @@ function endGame() {
     timeEl.textContent = " ";
 }
 
-startButton.addEventListener("click", startQuiz);
+// startButton.addEventListener("click", startQuiz);
 
 
 // C:\Users\mjtha\downloads\sneks\04-Web-APIs\01-Activities\09-Ins_Timers-Intervals\script.js
 
-// var timeLeft = 60;
-// var elem = document.getElementById('Timer');
-// var timerId = setInterval(startTimer, 1000);
+var timeLeft = 60;
+var elem = document.getElementById('Timer');
+var timerId = setInterval(startTimer, 1000);
 
-// var timer;
-// var timerCount;
-// function startQuiz() {
-//     startTimer()
-//     timerCount = 60;
-// };
+var timer;
+var timerCount;
+function startQuiz() {
+    startTimer()
+    timerCount = 60;
+};
 
-// function startTimer() {
-//     if (timeLeft == 0) {
-//         clearTimeout(timerId);
-//         doSomething();
-//     } else {
-//         elem.innerHTML = timeLeft + ' seconds remaining';
-//         timeLeft--;
-//     }
-// }
+function startTimer() {
+    if (timeLeft == 0) {
+        clearTimeout(timerId);
+        doSomething();
+    } else {
+        elem.innerHTML = timeLeft + ' seconds remaining';
+        timeLeft--;
+    }
+}

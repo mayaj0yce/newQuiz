@@ -1,21 +1,53 @@
-choices.forEach(choice => {
-choice.addEventListener("click", e => {
-if (!acceptingAnswers) return;
 
-acceptingAnswers = false;
-const selectedChoice = e.target;
-const selectedAnswer = selectedChoice.dataset["number"];
+let timer = document.getElementById('time')
+let timerId = setInterval(startTimer, 1000);
+function startTimer() {
+    if (timeLeft == 0) {
+        clearTimeout(timerId);
+        doSomething();
+    } else {
+        elem.innerHTML = timeLeft + ' seconds remaining';
+        timeLeft--;
+    }
+}
 
-const classToApply =
-selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+startTimer();
+timerCount = 60;
 
-selectedChoice.parentElement.classList.add(classToApply);
+if (if timer === 0) {
+    return window.location.assign('score.html')
+}
 
-setTimeout(() => {
-selectedChoice.parentElement.classList.remove(classToApply);
-getNewQuestion();
-}, 1000);
-});
-});
+if (classToApply === 'wrong') {
+    decreaseTime(wrongGuess);
+}
 
-startGame();
+decreaseTime = num => {
+    score -= num;
+    timeText.innerText = time;
+};
+
+
+function updateTimer() {
+    timeText.textContent = time;
+
+    if (time == 0) {
+        clearInterval(interval);
+        // return window.location.assign('score.html');
+    }
+    else {
+        time--;
+    }
+}
+
+const interval = setInterval(updateTimer, 1000);
+
+if (classToApply === 'wrong') {
+    decreaseTime(wrongAnswer);
+}
+
+
+decreaseTime = num => {
+    time -= num;
+    timeText.innerText = time;
+};
